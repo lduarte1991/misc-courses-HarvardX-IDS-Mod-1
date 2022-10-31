@@ -1,5 +1,5 @@
 ---
-title: R Basics
+title: Fundamentos de R
 description: >-
   In this course we introduce you to the basics of computing and analyzing data
   in the user-friendly and helpful R interface. This first chapter starts with
