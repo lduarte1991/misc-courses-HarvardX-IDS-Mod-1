@@ -1,6 +1,6 @@
 ---
 title: Data Types
-description: >-
+description: >-lksjdf;lksjdf
   We're going to get an overview, of the different types of variables that there
   are in R, and how to work with them.
 ---
