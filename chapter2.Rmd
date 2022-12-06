@@ -1,8 +1,14 @@
 ---
+<<<<<<< Updated upstream
 title: Data Types
 description: >-lksjdf;lksjdf
   We're going to get an overview, of the different types of variables that there
   are in R, and how to work with them.
+=======
+title: Tipos de Datos
+description: >-
+  Vamos a obtener una comprensión general de los diferentes tipos de variables que existen en R y cómo trabajar con ellos.
+>>>>>>> Stashed changes
 ---
 
 ## str
@@ -16,26 +22,27 @@ skills:
   - 1
 ```
 
-We're going to be using the following dataset for this module. 
-Run this code in the console. 
+
+Vamos a utilizar el siguiente conjunto de datos para este módulo.
+Ejecute este código en la consola.
 
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-Next, use the function `str` to examine the structure of the `murders` object. We can see that this object is a data frame with 51 rows and five columns. 
+A continuación, utilice la función `str` para examinar la estructura del objeto `murders`. Podemos ver que este objeto es un marco de datos con 51 filas y cinco columnas.
 
-Which of the following best describes the variables represented in this data frame:
+¿Cuál de las siguientes describe mejor las variables representadas en este marco de datos?
 
 `@possible_answers`
-- The 51 states 
-- The murder rates for all 50 states and DC 
-- The state name, the abbreviation of the state name, the state's region, and the state's population and the total number of murders for 2010.
-- `str` shows no relevant information
+- Los 51 estados
+- Las tasas de homicidios para los 50 estados y DC
+- El nombre del estado, la abreviatura del nombre del estado, la región del estado y la población del estado y el número total de asesinatos para 2010.
+- `str` no muestra información relevante
 
 `@hint`
-Check the output that you see when you type `str(murders)`.
+Verifique la salida que ve cuando escribe `str (murders)`.
 
 `@pre_exercise_code`
 ```{r}
@@ -45,16 +52,16 @@ str(murders)
 
 `@sct`
 ```{r}
-msg1 = "Try again! Read the question again."
-msg2 = "Try again! Read the question carefully."
-msg3 = "Well done. Proceed to the next exercise"
-msg4 = "Try again! Check what the question is asking for"
+msg1 = "¡Inténtelo de nuevo! Lea la pregunta de nuevo."
+msg2 = "¡Inténtelo de nuevo! Lea la pregunta con atención."
+msg3 = "Bien hecho. Continúe con el siguiente ejercicio."
+msg4 = "¡Inténtelo de nuevo! Revise lo que pide la pregunta."
 test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
 
-## Variable names
+## Nombres de las variables
 
 ```yaml
 type: NormalExercise
@@ -65,14 +72,14 @@ skills:
   - 1
 ```
 
-In the previous question, we saw the different variables that are a part of this dataset from the output of the `str()` function. The  function `names()` is specifically designed to extract the column names from a data frame.
+En la pregunta anterior, vimos las diferentes variables que forman parte de este conjunto de datos desde la salida de la función `str()`. La función `names()` está específicamente diseñada para extraer los nombres de las columnas de un marco de datos.
 
 `@instructions`
-For this question, we will use the `names()` function to extract the column names of the `murders` data frame.
-- What are the column names used by the `murders` data frame for the five variables?
+Para esta pregunta, usaremos la función `names()` para extraer los nombres de las columnas del marco de datos `asesinatos`.
+- ¿Cuáles son los nombres de columna utilizados por el marco de datos `asesinatos` para las cinco variables?
 
 `@hint`
-Make sure you put the name of the dataset - `murders` - in parentheses after names.
+Asegúrese de poner el nombre del conjunto de datos - `asesinatos` - entre paréntesis después de los nombres.
 
 `@pre_exercise_code`
 ```{r}
@@ -82,37 +89,37 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Load package and data
+# Cargar paquete y datos
 
 library(dslabs)
 data(murders)
 
-# Use the function names to extract the variable names 
-
+# Utilice la función 'names' para extraer los nombres de las variables.
+ 
 ```
 
 `@solution`
 ```{r}
-# Load package and data
+# Cargar paquete y datos
 
 library(dslabs)
 data(murders)
 
-# Use the function names to extract the variable names 
+# Utilice la función 'names' para extraer los nombres de las variables.
 names(murders)
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_function("names", incorrect_msg = "Make sure you've put in the name of the dataset.") 
-test_output_contains ("names(murders)",times=1,incorrect_msg="Make sure you use the `names` function on the `murders` dataset")
-success_msg("Good job!")
+test_function("names", incorrect_msg = "Asegúrese de haber ingresado el nombre del conjunto de datos.") 
+test_output_contains ("names(murders)",times=1,incorrect_msg="Asegúrese de usar la función `names` en el conjunto de datos `murders`")
+success_msg("¡Buen trabajo!")
 ```
 
 ---
 
-## Examining Variables
+## Examinando Variables
 
 ```yaml
 type: NormalExercise
@@ -123,18 +130,18 @@ skills:
   - 1
 ```
 
-In this module we have learned that every variable has a class. For example, the class can be a *character*, *numeric* or *logical*. The function `class()` can be used to determine the class of an object.
+En este módulo hemos aprendido que cada variable tiene una clase. Por ejemplo, la clase puede ser un *character* (*carácter*), *numeric* (*numérico*) o *logical* (*lógico*). La función `class()` se puede utilizar para determinar la clase de un objeto.
 
-Here we are going to determine the class of one of the variables in the `murders` data frame. To extract variables from a data frame we use `$`, referred to as the accessor.
+Aquí vamos a determinar la clase de una de las variables en el marco de datos `murders`. Para extraer variables de un marco de datos, usamos `$`, denominado acceso.
 
-In the editor we show an example of how to do this. Let`s try it out for ourselves.
+En el editor mostramos un ejemplo de cómo hacer esto. Vamos a probarlo por nosotros mismos.
 
 `@instructions`
-Use the accessor `$` to extract the state abbreviations and assign them to the object `a`.
-What is the class of this object?
+Utilice el elemento de acceso `$` para extraer las abreviaturas de estado y asignarlas al objeto `a`.
+¿Cuál es la clase de este objeto?
 
 `@hint`
-Remember to assign the state abbreviations to the object `a`.
+Recuerde asignar las abreviaturas de estado al objeto `a`.
 
 `@pre_exercise_code`
 ```{r}
@@ -144,47 +151,47 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# To access the population variable from the murders dataset use this code:
+# Para acceder a la variable de 'population' (población) del conjunto de datos de 'murders' (asesinatos), use este código:
 p <- murders$population 
 
-# To determine the class of object `p` we use this code:
+# Para determinar la clase del objeto `p` usamos este código:
 class(p)
 
-# Use the accessor to extract state abbreviations and assign it to a
+# Utilice el descriptor de acceso para extraer abreviaturas de estado y asignarlo a una variable llamada a
 
-# Determine the class of a
+# Determine la clase de la variable a
 
 ```
 
 `@solution`
 ```{r}
 
-# To access the population variable from the murders dataset use this code:
+# Para acceder a la variable de 'population' (población) del conjunto de datos de 'murders' (asesinatos), use este código:
 m <- murders$population 
 
-# To determine the class of object m we use this code:
+# Para determinar la clase del objeto `p` usamos este código:
 class(m)
 
-# Use the accessor to extract state abbreviations and assign it to a
+# Utilice el descriptor de acceso para extraer abreviaturas de estado y asignarlo a una variable llamada a
 a <- murders$abb 
 
-# Determine the class of a
+# Determine la clase de la variable a
 class(a)  
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_object ("a", undefined_msg = "You need to define the object `a`.", incorrect_msg = "Make sure to save the variable `abb` in the object `a`.")
-test_function("class",index=2,incorrect_msg = "Keep the sample code when submitting your solution.")
-test_function_result("class",index=2,incorrect_msg = "Try again!")
-test_student_typed("$", times = 2, not_typed_msg = "Make sure you use the $ accessor.")
-success_msg("That's great! Now, you know what the class of `abb` is. Play around to check the class of the other variables in the dataset!")
+test_object ("a", undefined_msg = "Necesita definir el objeto `a`.", incorrect_msg = "Asegúrese de guardar la variable `abb` en el objeto `a`.")
+test_function("class",index=2,incorrect_msg = "Conserve el código de muestra cuando envíe su solución.")
+test_function_result("class",index=2,incorrect_msg = "¡Intenté de nuevo!")
+test_student_typed("$", times = 2, not_typed_msg = "Asegúrese de usar la accessor $.")
+success_msg("¡Eso es genial! Ahora, ya sabe cuál es la clase de `abb`. ¡Juege para verificar la clase de las otras variables en el conjunto de datos!")
 ```
 
 ---
 
-## Multiple ways to access variables
+## Múltiples formas de acceder a las variables
 
 ```yaml
 type: NormalExercise
@@ -195,28 +202,29 @@ skills:
   - 1
 ```
 
-An important lesson you should learn early on is that there are multiple ways to do things in R. For example, to generate the first five integers we note that `1:5` and `seq(1,5)` return the same result. 
+Una lección importante que debe aprender desde el principio es que hay varias formas de hacer las cosas en R. Por ejemplo, para generar los primeros cinco enteros notamos que `1:5` y `seq(1,5)` devuelven el mismo resultado.
 
-There are also multiple ways to access variables in a data frame. For example we can use the square brackets `[[`
-instead of the accessor `$`. Example code is included in the editor.
+También hay varias formas de acceder a las variables en un marco de datos. Por ejemplo, podemos usar los corchetes `[[`
+en lugar del descriptor de acceso `$`. El código de ejemplo se incluye en el editor.
 
-If you instead try to access a column with just one bracket, 
+Si, en cambio, intenta acceder a una columna con solo un corchete, 
+
 
 ```{r}
 murders["population"]
 ```
-R returns a subset of the original data frame containing just this column. This new object will be of class `data.frame` rather than a vector. To access the column itself you need to use either the `$` accessor or the double square brackets `[[`.
+R devuelve un subconjunto del marco de datos original que contiene solo esta columna. Este nuevo objeto será de clase `data.frame` en lugar de un vector. Para acceder a la columna en sí, debe usar el descriptor de acceso `$` o los corchetes dobles `[[`.
 
-Parentheses, in contrast, are mainly used alongside functions to indicate what argument the function should be doing something to. For example, when we did `class(p)` in the last question, we wanted the function `class` to do something related to the argument `p`.
+Los paréntesis, por el contrario, se usan principalmente junto con las funciones para indicar a qué argumento la función debería hacer algo. Por ejemplo, cuando hicimos `class(p)` en la última pregunta, queríamos que la función `class` hiciera algo relacionado con el argumento `p`.
 
-This is an example of how R can be a bit idiosyncratic sometimes. It is very common to find it confusing at first.
+Este es un ejemplo de cómo R puede ser un poco idiosincrásico a veces. Es muy común encontrarlo confuso al principio.
 
 `@instructions`
-- Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. 
-- Then use the `identical` function to determine if `a`, as defined in the previous exercises, and `b` are the same.
+- Utilice los corchetes `[[` para extraer las abreviaturas de estado y asignarlas al objeto `b`.
+- Luego use la función `idéntical` para determinar si  la variable `a`, como se definió en los ejercicios anteriores, y la variable `b` son iguales.
 
 `@hint`
-You need to use 2 sets of square brackets.
+Necesita usar 2 juegos de corchetes.
 
 `@pre_exercise_code`
 ```{r}
@@ -227,51 +235,51 @@ a <- murders$abb
 
 `@sample_code`
 ```{r}
-# We extract the population like this:
+# Extraemos la población así:
 p <- murders$population
 
-# This is how we do the same with the square brackets:
+# Así hacemos lo mismo con los corchetes:
 o <- murders[["population"]] 
 
-# We can confirm these two are the same
+# Podemos confirmar que estos dos son iguales.
 identical(o, p)
 
-# Use square brackets to extract `abb` from `murders` and assign it to b
+# Utilice corchetes para extraer `abb` de `murders` (asesinatos) y asignarlo a la variable 'b'.
 
-# Check if `a` and `b` are identical 
+# Compruebe si la variable `a` y la variable `b` son idénticas.
 
 ```
 
 `@solution`
 ```{r}
-# We extract the population like this:
+# Extraemos la población así:
 p <- murders$population
 
-# This is how we do the same with the square brackets:
+# Así hacemos lo mismo con los corchetes:
 o <- murders[["population"]] 
 
-# We can confirm these two are the same
+# Podemos confirmar que estos dos son iguales.
 identical(o, p)
 
-# Use square brackets to extract `abb` from `murders` and assign it to 
+# Utilice corchetes para extraer `abb` de `murders` (asesinatos) y asignarlo a la variable 'b'. 
 b <- murders[["abb"]]
 
-# Check if `a` and `b` are identical 
+# Compruebe si la variable `a` y la variable `b` son idénticas.
 identical(a,b)
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_object ("b", undefined_msg = "You need to define the object `b`.", incorrect_msg = "Make sure to save the variable `abb` in the object `b`.")
+test_object ("b", undefined_msg = "Necesita definir el objeto `b`.", incorrect_msg = "Asegúrese de guardar la variable `abb` en el objeto `b`.")
 test_function("identical",index=2)
-test_student_typed("b<-murders[['abb']]",not_typed_msg = "Make sure to use the double brackets instead of a the $ operator")
-success_msg("You've now learned different ways of doing the same thing in R! You're making great progress!")
+test_student_typed("b<-murders[['abb']]",not_typed_msg = "Asegúrese de usar los corchetes dobles en lugar del operador $.")
+success_msg("¡Ahora ha aprendido diferentes formas de hacer lo mismo en R! ¡Está haciendo un gran progreso!")
 ```
 
 ---
 
-## Factors
+## Factores
 
 ```yaml
 type: NormalExercise
@@ -282,16 +290,18 @@ skills:
   - 1
 ```
 
-Using the `str()` command, we saw that the *region* column stores a factor. You can corroborate this by using the `class` command on the *region* column. 
+Usando el comando `str()`, vimos que la columna *region* (*región*) almacena un factor. Puede corroborar esto usando el comando `class` ('clase') en la columna *region*.
 
-The function `levels` shows us the categories for the factor.
+La función `levels` ('niveles') nos muestra las categorías para el factor.
 
-`@instructions`
-- For this question we will combine two functions, in a nested way, to determine the number of unique categories.
-Use the functions `levels` and `length` to determine the number of regions defined by this dataset and contained in `murders$region`.
+`@instrucciones`
+- Para esta pregunta combinaremos dos funciones, de forma anidada, para determinar el número de categorías únicas.
+Utilice las funciones `levels` ('niveles') y `length` ('longtidu') para determinar el número de regiones definidas por este conjunto de datos y contenidas en `murders$region`.
 
-`@hint`
-Make sure you're using nested functions: `levels` inside of `length`.
+`@pista`
+Asegurese de usar funciones anidadas: `levels` ('niveles') dentro de `length` ('longitud').
+
+
 
 `@pre_exercise_code`
 ```{r}
@@ -301,19 +311,19 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# We can see the class of the region variable using class
+# Podemos ver la clase de la variable region usando la función class
 class(murders$region)
 
-# Determine the number of regions included in this variable 
+# Determine el número de regiones incluidas en esta variable
 
 ```
 
 `@solution`
 ```{r}
-# We can see the class of the region variable using class
+# Podemos ver la clase de la variable region usando la función class
 class(murders$region)
 
-# Determine the number of regions included in this variable 
+# Determine el número de regiones incluidas en esta variable
 length(levels(murders$region))
 
 ```
@@ -321,15 +331,15 @@ length(levels(murders$region))
 `@sct`
 ```{r}
 test_error()
-test_output_contains("length(levels(murders$region))", incorrect_msg = "Run the code mentioned in the instructions exactly as is.")
+test_output_contains("length(levels(murders$region))", incorrect_msg = "Ejecute el código mencionado en las instrucciones exactamente como está.")
 test_function("length")
 test_function("levels")
-success_msg("Good job!")
+success_msg("¡Buen trabajo!")
 ```
 
 ---
 
-## Tables
+## Tablas
 
 ```yaml
 type: NormalExercise
@@ -340,14 +350,14 @@ skills:
   - 1
 ```
 
-The function `table` takes a vector as input and returns the frequency of each unique element in the vector. (Note that you will see the function `c()` used in our sample code, but we are only using it here to create a vector to which we can apply the `table()` function as an example.)
+La función `table` ('tabla') toma un vector como entrada y devuelve la frecuencia de cada elemento único en el vector. (Tenga en cuenta que verá la función `c()` utilizada en nuestro código de muestra, pero solo la estamos usando aquí para crear un vector al que podemos aplicar la función `table()` como ejemplo).
 
-`@instructions`
-We will use the `table` function to answer this question.
-- Use the `table` function in one line of code to create a table showing the number of states per region.
+`@instrucciones`
+Usaremos la función `table` ('tabla') para responder a esta pregunta.
+- Use la función `table` ('tabla') en una línea de código para crear una tabla que muestre el número de estados por región.
 
-`@hint`
-Extract the variable *region* from the `murders` dataset using `murders$region`. If you apply the function `table` function to this object it will count the number it times each region appears.
+`@pista`
+Extraiga la variable *region* (*región*) del conjunto de datos `murders` usando `murders$region`. Si aplica la función `table` ('tabla') a este objeto, la función contará el número de veces que aparece cada región.
 
 `@pre_exercise_code`
 ```{r}
