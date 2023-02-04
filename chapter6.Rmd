@@ -20,7 +20,7 @@ Aquí usaremos operadores lógicos para crear un vector lógico.
 
 `@instrucciones`
 - Calcule la tasa de homicidios por cada 100,000 para cada estado y guardela en un objeto llamado `murder_rate`. 
-- Entonces use los operadores lógicos para crear un vector lógic y nómbralo `low`. Este vector nos dirá cual de las entradas de `murder_rate` son menores que 1, y cuales no lo son, en una sola línea de código.
+- Entonces use los operadores lógicos para crear un vector lógic y nómbralo `low`. Este vector nos dirá cual de las entradas de `murder_rate` son menores de 1, y cuales no lo son, en una sola línea de código.
 
 `@pista`
 El código para calcular la tasa de homicidios es: `murders$total/murders$population*100000`.
@@ -51,7 +51,7 @@ low <- murder_rate < 1
 `@sct`
 ```{r}
 test_error()
-test_object("low", undefined_msg = "Define low!", incorrect_msg = "Debe referirse a las tasas de homicidio menores que 1.")
+test_object("low", undefined_msg = "Define low!", incorrect_msg = "Debe referirse a las tasas de homicidio menores de 1.")
 success_msg("Buen trabajo!")
 ```
 
@@ -71,7 +71,7 @@ skills:
 La función `which()` nos ayuda a saber directamente cuales valores son bajos o altos, etc. Usemosla en este ejercicio.
 
 `@instrucciones`
-- Use los resultados del ejercicio anterior y la función `which` para determinar los índices `murder_rate` asociados con los valores menores que 1.
+- Use los resultados del ejercicio anterior y la función `which` para determinar los índices `murder_rate` asociados con los valores menores de 1.
 
 `@pista`
 `which` devolverá los lógicos verdaderos (TRUE) .
@@ -117,7 +117,7 @@ success_msg("Awesome!")
 
 ---
 
-## Ordering vectors
+## Ordenando vectores
 
 ```yaml
 type: NormalExercise
@@ -128,17 +128,17 @@ skills:
   - 1
 ```
 
-Note that if we want to know which entries of a vector are lower than a particular value we can use code like this:
+Note que si queremos saber cuales entradas de un vector son menores que un valor particular podemos utilizar código como el siguiente:
 
 ```{r}
 small <- murders$population < 1000000
 murders$state[small]
 ```
 
-The code above shows us the states with populations smaller than one million.
+El código de arriba nos muestra los estados con poblaciones menores que un millón.
 
-`@instructions`
-- Use the results from the previous exercise to report the names of the states with murder rates lower than 1, using the square brackets to retrieve the names of the states from the dataset.
+`@instrucciones`
+- Use los resultados del ejercicio anterior para reportar los nombres de los estados con tasas de homicidio menores que 1, usando los corchetes cuadrados para obtener los nombres de los estados del conjunto de datos.
 
 `@hint`
 
@@ -151,25 +151,25 @@ data(dslabs)
 
 `@sample_code`
 ```{r}
-# Store the murder rate per 100,000 for each state, in murder_rate
+# Guarde la tasa de homicidio por cada 100,000 para cada estado, en murder_rate
 murder_rate <- murders$total/murders$population*100000
 
-# Store the murder_rate < 1 in low 
+# Guarde los valores de murder_rate < 1 en low
 low <- murder_rate < 1
 
-# Names of states with murder rates lower than 1
+# Nombres de estados con tasas de homicidio menores que 1
 
 ```
 
 `@solution`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Guarde la tasa de homicidio por cada 100,000 para cada estado, en `murder_rate`
 murder_rate <- murders$total/murders$population*100000
 
-# Store the `murder_rate < 1` in `low` 
+# Guarde los valores de `murder_rate` < 1 en `low` 
 low <- murder_rate < 1
 
-# Names of states with murder rates lower than 1 
+# Nombres de estados con tasas de homicidio menores que 1
 murders$state[low]
 
 ```
@@ -177,8 +177,8 @@ murders$state[low]
 `@sct`
 ```{r}
 test_error()
-test_output_contains("murders$state[low]", incorrect_msg = "Follow code from example given!")
-success_msg("Good job!")
+test_output_contains("murders$state[low]", incorrect_msg = "Siga el código del ejemplo!")
+success_msg("Buen trabajo!")
 ```
 
 ---
