@@ -20,7 +20,7 @@ Aquí usaremos operadores lógicos para crear un vector lógico.
 
 `@instrucciones`
 - Calcule la tasa de homicidios por cada 100,000 para cada estado y guardela en un objeto llamado `murder_rate`. 
-- Entonces use los operadores lógicos para crear un vector lógic y nómbralo `low`. Este vector nos dirá cual de las entradas de `murder_rate` son menores de 1, y cuales no lo son, en una sola línea de código.
+- Entonces use los operadores lógicos para crear un vector lógic y nómbralo `low`. Este vector nos dirá cuál de las entradas de `murder_rate` son menores de 1, y cuales no lo son, en una sola línea de código.
 
 `@pista`
 El código para calcular la tasa de homicidios es: `murders$total/murders$population*100000`.
@@ -403,7 +403,7 @@ x%in%y
 Nos devuelve dos verdaderos (`TRUE`) seguidos por un falso (`FALSE`) porque el 2 y el 3 se encuentran en `y` pero el 5 no.
 
 `@instrucciones`
-Cual de las siguientes son abreviaturas reales: MA, ME, MI, MO, MU?
+Cuál de las siguientes son abreviaturas reales: MA, ME, MI, MO, MU?
 - Defina un vector de caracteres con las abreviaturas MA, ME, MI, MO, MU.
 - Use el operador `%in%` para crear un vector lógico que sea verdadero (TRUE) cuando la abreviatura se encuentra en `murders$abb`.
 
@@ -462,14 +462,14 @@ skills:
 
 
 
-`@instructions`
-We are again working with the characters `abbs <- c("MA", "ME", "MI", "MO", "MU")`
+`@instrucciones`
+Volvemos a trabajar con los caracteres `abbs <- c("MA", "ME", "MI", "MO", "MU")`
 
-- In a previous exercise we computed the index `abbs%in%murders$abb`. Based on that, and using the `which` function and the `!` operator, get the index of the entries of `abbs` that are **not** abbreviations.
-- Show the entries of `abbs` that are not actual abbreviations.
+- Anteriormente calculamos el índice `abbs%in%murders$abb`. Basado en eso, y usando la función `which` y el operador `!` , obtenga el índice de las entradas de `abbs` que **no son**  abreviaturas.
+- Muestre las entradas de `abbs` que no son abreviaturas reales.
 
-`@hint`
-Use the code `ind <- which(!abbs%in%murders$abb)` to get the index. Then you can use the `[` to extract the correct values of `abbs`.
+`@pista`
+Use el código `ind <- which(!abbs%in%murders$abb)` para obtener el índice. Entonces puede usar el corchete `[` para extraer los valores correctos de `abbs`.
 
 `@pre_exercise_code`
 ```{r}
@@ -479,24 +479,24 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Store the 5 abbreviations in abbs. (remember that they are character vectors)
+# Guarde las 5 abreviaturas en abbs. (recuerde que son vectores de caracteres)
 abbs <- c("MA", "ME", "MI", "MO", "MU") 
 
-# Use the `which` command and `!` operator to find out which index abbreviations are not actually part of the dataset and store in `ind`
+# Use la función `which` y el operador `!` para averiguar cuál de las abreviaturas indexadas no forman parte del conjunto de datos y guardalas en `ind`
 
-# Identify abbreviations from `abbs` that are in `ind`
+# Identifica las abreviaturas de `abbs` que estan en `ind`
 
 ```
 
 `@solution`
 ```{r}
-# Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
+# Guarde las 5 abreviaturas en abbs. (recuerde que son vectores de caracteres)
 abbs <- c("MA", "ME", "MI", "MO", "MU") 
 
-# Use the `which` command and `!` operator to find out which index abbreviations are not actually part of the dataset and store in 'ind' 
+# Use la función `which` y el operador `!` para averiguar cuál de las abreviaturas indexadas no forman parte del conjunto de datos y guardalas en `ind` 
 ind <- which(!abbs%in%murders$abb)
 
-# Identify abbreviations from `abbs` that are in `ind`
+# Identifica las abreviaturas de `abbs` que estan en `ind`
 abbs[ind]
 
 ```
@@ -504,8 +504,8 @@ abbs[ind]
 `@sct`
 ```{r}
 test_error()
-test_object("ind", undefined_msg = "Make sure you define ind first!", incorrect_msg = "Use the which and ! codes." )
-test_output_contains("abbs[ind]", incorrect_msg = "Review how you are accessing the abbreviations")
+test_object("ind", undefined_msg = "Asegúrese que defina a ind primero!", incorrect_msg = "Use la función which y el operador ! ." )
+test_output_contains("abbs[ind]", incorrect_msg = "Revise la manera de la que está accediendo a las abreviaturas.")
 success_msg("Awesome!")
 ```
 
