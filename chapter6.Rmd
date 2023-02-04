@@ -1,5 +1,5 @@
 ---
-title: Indexing
+title: Indexación
 description: >-
   R provides a powerful and convenient way of indexing vectors. We're going to
   learn some ways of doing that!
