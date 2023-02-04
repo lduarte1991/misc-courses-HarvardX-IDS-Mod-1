@@ -1,11 +1,11 @@
 ---
 title: Indexación
 description: >-
-  R provides a powerful and convenient way of indexing vectors. We're going to
-  learn some ways of doing that!
+  R proporciona una forma poderosa y conveniente de indexar los vectores. Ahora aprenderemos
+  algunas maneras de hacer eso!
 ---
 
-## Logical Vectors
+## Vectores Lógicos
 
 ```yaml
 type: NormalExercise
@@ -16,14 +16,14 @@ skills:
   - 1
 ```
 
-Here we will be using logical operators to create a logical vector.
+Aquí usaremos operadores lógicos para crear un vector lógico.
 
-`@instructions`
-- Compute the per 100,000 murder rate for each state and store it in an object called `murder_rate`. 
-- Then use the logical operators to create a logical vector, name it `low`, that tells us which entries of `murder_rate` are lower than 1, and which are not, in one line of code.
+`@instrucciones`
+- Calcule la tasa de homicidios por cada 100,000 para cada estado y guardela en un objeto llamado `murder_rate`. 
+- Entonces use los operadores lógicos para crear un vector lógic y nómbralo `low`. Este vector nos dirá cual de las entradas de `murder_rate` son menores que 1, y cuales no lo son, en una sola línea de código.
 
-`@hint`
-The code for calculating the murder rate is: `murders$total/murders$population*100000`.
+`@pista`
+El código para calcular la tasa de homicidios es: `murders$total/murders$population*100000`.
 
 `@pre_exercise_code`
 ```{r}
@@ -33,26 +33,26 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Guarde la tasa de homicidios por cada 100,000 para cada estado, en `murder_rate`
 murder_rate <- murders$total / murders$population * 100000
 
-# Store the `murder_rate < 1` in `low` 
+# Guarde los valores de tasas de homicidio por cada 100,000 que sean menores que 1, `murder_rate < 1`, en el objeto `low` 
 ```
 
 `@solution`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Guarde la tasa de homicidios por cada 100,000 para cada estado, en `murder_rate`
 murder_rate <- murders$total/murders$population*100000
 
-# Store the `murder_rate < 1` in `low` 
+# Guarde los valores de tasas de homicidio por cada 100,000 que sean menores que 1, `murder_rate < 1`, en el objeto `low` 
 low <- murder_rate < 1
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_object("low", undefined_msg = "Define low!", incorrect_msg = "It should be murder rates less than 1.")
-success_msg("Great job!")
+test_object("low", undefined_msg = "Define low!", incorrect_msg = "Debe referirse a las tasas de homicidio menores que 1.")
+success_msg("Buen trabajo!")
 ```
 
 ---
