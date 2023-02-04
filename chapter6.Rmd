@@ -331,15 +331,15 @@ skills:
   - 1
 ```
 
-In this exercise we use the `match` function to identify the states with abbreviations AK, MI, and IA.
+En este ejercicio usamos la función `match` para identificar los estados con las abreviaturas AK, MI, and IA.
 
-`@instructions`
-- Define a character vector with the abbreviations.
-- Start by defining an index of the entries of `murders$abb` that match the three abbreviations.
-- Use the `[` operator to extract the states.
+`@instrucciones`
+- Define un vector de caracteres con las abreviaturas.
+- Comience definiendo un índice de las entradas de `murders$abb` que correspondan a las tres abreviaturas.
+- Use el operador `[` para extraer los estados.
 
-`@hint`
-Once you define `abbs <- c("AK", "MI", "IA")` you can then use match to figure out the indexes of where these appear with `ind <- match(abbs , murders$abb)`
+`@pista`
+Una vez que defina `abbs <- c("AK", "MI", "IA")` puede usar match para averiguar los índices a los cuales corresponden con `ind <- match(abbs , murders$abb)`
 
 `@pre_exercise_code`
 ```{r}
@@ -349,23 +349,23 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Store the 3 abbreviations in a vector called `abbs` (remember that they are character vectors and need quotes)
+# Guarde las 3 abreviaturas en un vector llamado `abbs` (recuerde que son vectores de caracteres y requieren comillas)
 
-# Match the abbs to the murders$abb and store in ind
+# Coordine los abbs a los murders$abb y guárdelo en ind
 
-# Print state names from ind
+# Imprima de ind los nombres de los estados
 
 ```
 
 `@solution`
 ```{r}
-# Store the 3 abbreviations in a vector called `abbs` (remember that they are character vectors and need quotes)
+# Guarde las 3 abreviaturas en un vector llamado `abbs` (recuerde que son vectores de caracteres y requieren comillas)
 abbs <- c("AK", "MI", "IA")
 
-# Match the abbs to the murders$abb and store in `ind`
+# Coordine los abbs a los murders$abb y guárdelo en `ind`
 ind <- match(abbs , murders$abb)
 
-# Print state names from `ind`
+# Imprima de `ind` los nombres de los estados
 murders$state[ind]
 
 ```
@@ -373,10 +373,10 @@ murders$state[ind]
 `@sct`
 ```{r}
 test_error()
-test_object("abbs", undefined_msg = "Define abbs!", incorrect_msg = "Check the abbreviations stored.")
-test_object("ind", undefined_msg = "Define ind!", incorrect_msg = "Make sure to use the match function ")
-test_output_contains("murders$state[ind]", incorrect_msg = "Use square brackets.")
-success_msg("Awesome!")
+test_object("abbs", undefined_msg = "Defina abbs!", incorrect_msg = "Revise las abreviaturas guardadas.")
+test_object("ind", undefined_msg = "Defina ind!", incorrect_msg = "Asegúrese de utilizar la función match ")
+test_output_contains("murders$state[ind]", incorrect_msg = "Use corchetes.")
+success_msg("Excelente!")
 ```
 
 ---
