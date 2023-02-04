@@ -68,13 +68,13 @@ skills:
   - 1
 ```
 
-The function `which()` helps us know directly, which values are low or high, etc. Let's use it in this question.
+La función `which()` nos ayuda a saber directamente cuales valores son bajos o altos, etc. Usemosla en este ejercicio.
 
-`@instructions`
-- Use the results from the previous exercise and the function `which` to determine the indices of `murder_rate` associated with values lower than 1.
+`@instrucciones`
+- Use los resultados del ejercicio anterior y la función `which` para determinar los índices `murder_rate` asociados con los valores menores que 1.
 
-`@hint`
-`which` will return the TRUE logicals.
+`@pista`
+`which` devolverá los lógicos verdaderos (TRUE) .
 
 `@pre_exercise_code`
 ```{r}
@@ -84,25 +84,25 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Store the murder rate per 100,000 for each state, in murder_rate
+# Guarde la tasa de homicidios por cada 100,000 para cada estado, en murder_rate
 murder_rate <- murders$total/murders$population*100000
 
-# Store the murder_rate < 1 in low 
+# Guarde los valores de murder_rate < 1 en low 
 low <- murder_rate < 1
 
-# Get the indices of entries that are below 1
+# Obtenga los índices de las entradas menores que 1
 
 ```
 
 `@solution`
 ```{r}
-# Store the murder rate per 100,000 for each state, in murder_rate
+# Guarde la tasa de homicidios por cada 100,000 para cada estado, en murder_rate
 murder_rate <- murders$total/murders$population*100000
 
-# Store the murder_rate < 1 in low 
+# Guarde los valores de murder_rate < 1 en low 
 low <- murder_rate < 1
 
-# Get the indices of entries that are below 1
+# Obtenga los índices de las entradas menores que 1
 which(low)
 
 ```
