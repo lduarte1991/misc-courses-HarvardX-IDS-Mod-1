@@ -140,7 +140,7 @@ El código de arriba nos muestra los estados con poblaciones menores que un mill
 `@instrucciones`
 - Use los resultados del ejercicio anterior para reportar los nombres de los estados con tasas de homicidio menores que 1, usando los corchetes cuadrados para obtener los nombres de los estados del conjunto de datos.
 
-`@hint`
+`@pista`
 
 
 `@pre_exercise_code`
@@ -183,7 +183,7 @@ success_msg("Buen trabajo!")
 
 ---
 
-## Filtering
+## Filtrando
 
 ```yaml
 type: NormalExercise
@@ -196,14 +196,14 @@ skills:
 
 
 
-`@instructions`
-Now we will extend the code from the previous exercises to report the states in the Northeast with a murder rate lower than 1.
-- Define `low` as before.
-- Use the `&` operator to create a new object `ind` that is true when `low` is true and the state is in the Northeast
-- Use the brackets `[` and `ind` to show the state names that satisfy this condition
+`@instrucciones`
+Ahora usaremos el código de los ejercicios anteriores to report the states para reportar los estados en el noreste con una tasa de homicidio menor que 1.
+- Defina `low` como lo hizo anteriormente.
+- Use el operador `&` para crear un nuevo objeto `ind` que sea verdadero cuando `low` es verdad y el estado está localizado en el noreste.
+- Use los corchetes `[` y `ind` para nombrar los nombres de los estados que satisfacen esta condición.
 
-`@hint`
-Use the previously defined logical vector `low` and the logical operator `&`. For states with less than 1 million it will be like this: 
+`@pista`
+Use el vector lógico `low` anteriormente definido y el operador lógico `&`. Para estados con poblaciones con menos de un millón lucirá así: 
 
 ```{r}
 ind <- low & murders$population < 1000000
@@ -216,30 +216,30 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Guarde la tasa de homicidio por cada 100,000 para cada estado, en `murder_rate`
 murder_rate <- murders$total/murders$population*100000
 
-# Store the `murder_rate < 1` in `low` 
+# Guarde los valores de `murder_rate` < 1 en `low` 
 low <- murder_rate < 1
 
-# Create a vector ind for states in the Northeast and with murder rates lower than 1. 
+# Cree un vector ind para estados localizados en el noreste y con tasas de homicidio menores que 1. 
 
-# Names of states in `ind` 
+# Nombres de estados `ind` 
 
 ```
 
 `@solution`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Guarde la tasa de homicidio por cada 100,000 para cada estado, en `murder_rate`
 murder_rate <- murders$total/murders$population*100000
 
-# Store the `murder_rate < 1` in `low` 
+# Guarde los valores de `murder_rate` < 1 en `low` 
 low <- murder_rate < 1
 
-# States in the Northeast with murder rates lower than 1; store in 'ind'
+# Estados localizados en el noreste con tasas de homicidio menores que 1; guarde en 'ind'
 ind <- low & murders$region=="Northeast"
 
-# Names of states in `ind`
+# Nombres de estados `ind`
 murders$state[ind]
 
 ```
@@ -247,11 +247,11 @@ murders$state[ind]
 `@sct`
 ```{r}
 test_error()
-test_object("murder_rate", undefined_msg = "Define murder rate", incorrect_msg = "Don't change anything, just run the code.")
-test_object("low", undefined_msg = "Define low!", incorrect_msg = "Same as previous exercise.")
-test_object("ind", undefined_msg = "Make sure to define ind first!", incorrect_msg = 'Use code ind <- low & murders$region=="Northeast".')
-test_output_contains("murders$state[ind]", incorrect_msg = "Use [] to retrieve names.")
-success_msg("Wasn't that good! Let's move to the next one.")
+test_object("murder_rate", undefined_msg = "Defina murder rate", incorrect_msg = "No cambie nada, solo corra el código.")
+test_object("low", undefined_msg = "Defina low!", incorrect_msg = "Lo mismo que el ejercicio anterior.")
+test_object("ind", undefined_msg = "Asegúrese de definir ind primero!", incorrect_msg = 'Use el código ind <- low & murders$region=="Northeast".')
+test_output_contains("murders$state[ind]", incorrect_msg = "Use [] para obtener los nombres.")
+success_msg("Eso estuvo fenomenal! Sigamos con el próximo ejercicio.")
 ```
 
 ---
