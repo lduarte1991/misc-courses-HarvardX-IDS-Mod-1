@@ -511,7 +511,7 @@ success_msg("Awesome!")
 
 ---
 
-## End of Assessment 6
+## Fin de la Evaluación 6
 
 ```yaml
 type: PureMultipleChoiceExercise
@@ -522,19 +522,19 @@ skills:
   - 1
 ```
 
-This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.
+Este es el fin del trabajo de programación para esta sección. Por favor NO continue a evaluaciones adicionales desde esta página. Por favor SI conteste la pregunta en esta página. Si continua a otras evaluaciones, puede que su resultado NO sea grabado.
 
-Click on "Awesome" to get the "points" for this question and then return to the course on edX.
+Seleccione "Asombroso" para obtener los "puntos" por esta pregunta y entonces regrese al curso en edX.
 
-You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics-2'>course</a>.
+Ya puede cerrar esta ventana para volver al <a href='https://www.edx.org/course/data-science-r-basics-2'>curso</a>.
 
-`@hint`
-- No hint necessary!
+`@pista`
+- Ninguna pista es necesaria!
 
 `@possible_answers`
-- [Awesome]
-- Nope
+- [Asombroso]
+- No
 
 `@feedback`
-- Great! Now navigate back to the course on edX!
-- Now navigate back to the course on edX!
+- Fabuloso! Ahora regrese al curso en edX!
+- Ahora regrese al curso en edX!
