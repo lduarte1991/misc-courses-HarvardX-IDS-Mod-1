@@ -256,7 +256,7 @@ success_msg("Eso estuvo fenomenal! Sigamos con el próximo ejercicio.")
 
 ---
 
-## Filtering continued
+## Filtrando, a continuación
 
 ```yaml
 type: NormalExercise
@@ -269,11 +269,11 @@ skills:
 
 
 
-`@instructions`
-In a previous exercise we computed the murder rate for each state and the average of these numbers.
-- How many states are below the average?
+`@instrucciones`
+En un ejercicio anterior calculamos la tasa de homicidio para cada estado y el promedio de estos valores.
+- Cuantos estados quedan por debajo del promedio?
 
-`@hint`
+`@pista`
 
 
 `@pre_exercise_code`
@@ -284,26 +284,26 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Store the murder rate per 100,000 for each state, in murder_rate
+# Guarde la tasa de homicidio por cada 100,000 para cada estado, en `murder_rate`
 murder_rate <- murders$total/murders$population*100000
 
 
-# Compute the average murder rate using `mean` and store it in object named `avg`
+# Calcule la tasa promedio de homicidio usando `mean` y guárdela en el objeto llamado `avg`
 
 
-# How many states have murder rates below avg ? Check using sum 
+# Cuantos estados tienen tasas de homicidio por debajo de avg ? Compruebe esto usando sum 
 
 ```
 
 `@solution`
 ```{r}
-# Store the murder rate per 100,000 for each state, in murder_rate
+# Guarde la tasa de homicidio por cada 100,000 para cada estado, en `murder_rate`
 murder_rate <- murders$total/murders$population*100000
 
-# Compute the average murder rate using `mean` and store it in object named `avg`
+# Calcule la tasa promedio de homicidio usando `mean` y guárdela en el objeto llamado `avg`
 avg <-mean(murder_rate)
 
-# How many states are < avg ? Check using sum 
+# Cuantos estados tienen tasas de homicidio por debajo de avg ? Compruebe esto usando sum 
 sum(murder_rate < avg)
 
 ```
@@ -311,11 +311,11 @@ sum(murder_rate < avg)
 `@sct`
 ```{r}
 test_error()
-test_object("murder_rate", undefined_msg = "Define the murder rate first!", incorrect_msg = "Same formula as before.")
-test_object("avg", undefined_msg = "", incorrect_msg = "Compute the mean and store it here.")
-test_function("sum", incorrect_msg = "Check the number of states below average murder rate.")
-test_output_contains("27", incorrect_msg = "Did you count the number of states with a murder rate below `avg`?")
-success_msg("Awesome!")
+test_object("murder_rate", undefined_msg = "Primero defina murder rate !", incorrect_msg = "La misma formula de antes.")
+test_object("avg", undefined_msg = "", incorrect_msg = "Calcule el promedio y guárdelo aquí.")
+test_function("sum", incorrect_msg = "Compruebe el número de estados con una tasa de homicidio por debajo del promedio.")
+test_output_contains("27", incorrect_msg = "Contaste el número de estados con una tasa de homicidios por debajo de `avg`?")
+success_msg("Fantástico!")
 ```
 
 ---
